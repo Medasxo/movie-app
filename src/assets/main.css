@@ -3,6 +3,7 @@
   --red: #d7263D;
   --lightBlue: #0197F6;
   --cyan: #448FA3;
+  --main-font: 'Sriracha', cursive;
 }
 
 html, body{
@@ -11,6 +12,7 @@ html, body{
   margin: 0px;
   background-color: var(--blue);
   scroll-behavior: smooth;
+  font-family: var(--main-font, sans-serif);
 }
 
 #app{

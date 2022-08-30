@@ -8,7 +8,7 @@ defineProps({});
       <h3>Top-Rated</h3>
       <h3>Most Popular</h3>
     </div>
-    <h1>MOVIES</h1>
+    <h1>Movify</h1>
     <div class="watchlist">
       <h3>Watchlist</h3>
     </div>
