@@ -2,6 +2,11 @@
 import AppHeader from "./components/AppHeader.vue";
 import MoviesOverview from "./components/MoviesOverview.vue";
 import ShowcaseAutoplay from "./components/ShowcaseAutoplay.vue";
+
+
+
+
+
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import ShowcaseCarousel from './icons/ShowcaseCarousel.vue';
+import ShowcaseCarousel from './ShowcaseCarousel.vue';
 defineProps({});
 </script>
 
