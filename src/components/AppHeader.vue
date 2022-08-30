@@ -22,7 +22,7 @@ defineProps({});
   align-items: center;
   justify-content: center;
 }
-.watchlist{
+.watchlist {
   position: absolute;
   right: 2rem;
 }
@@ -33,13 +33,13 @@ h1 {
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
     0 0 0.8rem var(--red), 0 0 2.8rem var(--red), inset 0 0 1.3rem var(--red);
 }
-.linksMovies{
+.linksMovies {
   position: absolute;
   left: 2rem;
   display: flex;
   gap: 1rem;
 }
-h3{
+h3 {
   text-shadow: 0 0 0.3rem var(--red);
 }
 h3:hover {

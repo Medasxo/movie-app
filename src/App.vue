@@ -1,18 +1,16 @@
 <script setup>
 import AppHeader from "./components/AppHeader.vue";
+import LandingMain from "./components/LandingMain.vue";
 
 </script>
 
 <template>
   <header>
-      <AppHeader />
+    <AppHeader />
   </header>
+  <LandingMain />
 
-  <main>
-    
-  </main>
+  <main></main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
