@@ -36,7 +36,7 @@ onBeforeMount(() => {
 
 <template>
   <div class="upcomingMoviesTab">
-    <h1>Upcoming movies</h1>
+    <h1>Upcoming Movies</h1>
     <div class="moviesGrid" v-if="upcomingMoviesData.length > 0">
       <div class="movieTab" v-for="i in 15" :key="i">
         <img
@@ -54,14 +54,14 @@ onBeforeMount(() => {
 <style scoped>
 .upcomingMoviesTab {
   margin-left: 5rem;
-  margin-right: 5rem;
   color: var(--red);
 }
 
 .moviesGrid {
+  width: 85%;
   display: grid;
   grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
-  gap: 0;
+  gap: 0.5rem;
   margin: 0;
 }
 

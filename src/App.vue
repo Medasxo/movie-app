@@ -4,6 +4,7 @@ import AppHeader from "./components/AppHeader.vue";
 import ShowcaseAutoplay from "./components/ShowcaseAutoplay.vue";
 import { ref } from "vue";
 import UpcomingMovies from "./components/UpcomingMovies.vue";
+import TopMovies from "./components/TopMovies.vue";
 
 const API = ref("2cc7d8a7cdb91108d9665ce323fb49a5");
 </script>
@@ -13,9 +14,16 @@ const API = ref("2cc7d8a7cdb91108d9665ce323fb49a5");
     <AppHeader />
   </header>
   <main>
-  <ShowcaseAutoplay :apiKey="API" />
-  <UpcomingMovies :apiKey="API"/>
+    <ShowcaseAutoplay :apiKey="API" />
+    <div class="moviesFlexContainer">
+      <UpcomingMovies :apiKey="API" />
+      <TopMovies :apiKey="API" />
+    </div>
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.moviesFlexContainer {
+  display: flex;
+}
+</style>
