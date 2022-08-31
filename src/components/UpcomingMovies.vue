@@ -4,7 +4,7 @@ import { ref, onBeforeMount } from "vue";
 const props = defineProps({
   apiKey: String,
 });
-const upcomingMoviesData = ref({});
+const upcomingMoviesData = ref([]);
 
 function getRequest(url) {
   return fetch(url).then((res) => {
@@ -18,7 +18,10 @@ function getRequest(url) {
 
 function getTrendingData(url) {
   getRequest(url).then((data) => {
-    upcomingMoviesData.value = data;
+    const filtered = data.results.filter(
+      (result) => result.poster_path !== null
+    );
+    upcomingMoviesData.value = filtered;
   });
 }
 
@@ -26,15 +29,25 @@ onBeforeMount(() => {
   getTrendingData(
     "https://api.themoviedb.org/3/movie/upcoming?api_key=" +
       props.apiKey +
-      "&language=en-US&page=1"
+      "&language=en-US&page=1&region=US"
   );
-  console.log(upcomingMoviesData);
 });
 </script>
 
 <template>
   <div class="upcomingMoviesTab">
     <h1>Upcoming movies</h1>
+    <div class="moviesGrid" v-if="upcomingMoviesData.length > 0">
+      <div class="movieTab" v-for="i in 15" :key="i">
+        <img
+          :src="
+            'http://image.tmdb.org/t/p/w500/' +
+            upcomingMoviesData[i].poster_path
+          "
+        />
+        <h4>{{ upcomingMoviesData[i].original_title }}</h4>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -43,5 +56,28 @@ onBeforeMount(() => {
   margin-left: 5rem;
   margin-right: 5rem;
   color: var(--red);
+}
+
+.moviesGrid {
+  display: grid;
+  grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
+  gap: 0;
+  margin: 0;
+}
+
+.movieTab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.movieTab img {
+  width: 15rem;
+  height: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
+    0 0 0.8rem var(--red), 0 0 2.8rem var(--red), inset 0 0 1.3rem var(--red);
 }
 </style>
