@@ -2,6 +2,10 @@
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 import { ref, onBeforeMount } from "vue";
+
+const props = defineProps({
+  apiKey: String,
+})
 const trendingData = ref({});
 
 function getRequest(url) {
@@ -22,7 +26,7 @@ function getTrendingData(url) {
 
 onBeforeMount(() => {
   getTrendingData(
-    "https://api.themoviedb.org/3/trending/movie/week?api_key=2cc7d8a7cdb91108d9665ce323fb49a5"
+    "https://api.themoviedb.org/3/trending/movie/week?api_key=" + props.apiKey
   );
 });
 </script>
@@ -55,10 +59,6 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-.arrows-outside {
-  color: var(--red);
-}
-
 .content {
   height: 100%;
   display: flex;
@@ -75,10 +75,12 @@ onBeforeMount(() => {
   padding: 0px;
   gap: 0px;
 }
+
 h1 {
   color: var(--red);
   margin-bottom: 0;
 }
+
 p {
   margin: 0px;
 }
