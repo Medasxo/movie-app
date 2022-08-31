@@ -5,7 +5,7 @@ import { ref, onBeforeMount } from "vue";
 
 const props = defineProps({
   apiKey: String,
-})
+});
 const trendingData = ref({});
 
 function getRequest(url) {
@@ -32,7 +32,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <vueper-slides autoplay v-if="trendingData !== undefined">
+  <vueper-slides v-if="trendingData.results !== undefined" autoplay>
     <vueper-slide v-for="i in 6" :key="i">
       <template #content>
         <div class="content">
@@ -68,6 +68,7 @@ onBeforeMount(() => {
   margin-left: 5rem;
   color: white;
 }
+
 .info {
   display: flex;
   flex-direction: column;
@@ -84,13 +85,16 @@ h1 {
 p {
   margin: 0px;
 }
+
 .description {
   display: flex;
   flex-direction: column;
 }
+
 .content img {
   border-radius: 1rem;
 }
+
 .overview {
   max-width: auto;
   overflow: hidden;
