@@ -47,7 +47,12 @@ onBeforeMount(() => {
           "
         />
         <div class="movieInformation">
-            {{topMoviesData[i].original_title}}
+          <h4>{{ topMoviesData[i].original_title }}</h4>
+          <p>
+            {{ topMoviesData[i].release_date }} Rating:{{
+              " " + topMoviesData[i].vote_average
+            }}
+          </p>
         </div>
       </div>
     </div>
@@ -58,7 +63,6 @@ onBeforeMount(() => {
 .topMoviesTab {
   display: flex;
   flex-direction: column;
-
 }
 h1 {
   color: var(--red);
@@ -67,12 +71,13 @@ h1 {
 .topMoviesFlexContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .topMovie {
   display: flex;
   padding-left: 0.5rem;
   gap: 1rem;
+  border-radius: 0.5rem;
   justify-content: flex-start;
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
     0 0 0.8rem var(--red), 0 0 2.8rem var(--red), inset 0 0 1.3rem var(--red);
@@ -83,11 +88,20 @@ h1 {
   width: 5rem;
 }
 
-.movieInformation{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    justify-content: center;
+.movieInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  justify-content: center;
+}
+
+.movieInformation h4 {
+  margin: 0;
+}
+
+.movieInformation p {
+  opacity: 0.5;
+  margin: 0;
 }
 </style>

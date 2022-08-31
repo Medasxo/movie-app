@@ -53,29 +53,29 @@ onBeforeMount(() => {
 
 <style scoped>
 .upcomingMoviesTab {
-  margin-left: 5rem;
+  padding-left: 5rem;
   color: var(--red);
+  margin: 0;
+  width: 70%;
 }
 
 .moviesGrid {
-  width: 85%;
   display: grid;
   grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 0;
 }
 
 .movieTab {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: white;
 }
 
 .movieTab img {
-  width: 15rem;
-  height: 20rem;
+  width: 13rem;
+  height: 18rem;
   border-radius: 1rem;
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
     0 0 0.8rem var(--red), 0 0 2.8rem var(--red), inset 0 0 1.3rem var(--red);

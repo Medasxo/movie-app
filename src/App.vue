@@ -25,5 +25,8 @@ const API = ref("2cc7d8a7cdb91108d9665ce323fb49a5");
 <style scoped>
 .moviesFlexContainer {
   display: flex;
+  margin: 0;
+  gap: 4rem;
+  padding: 0;
 }
 </style>
