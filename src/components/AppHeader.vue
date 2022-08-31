@@ -5,12 +5,12 @@ defineProps({});
 <template>
   <div class="header">
     <div class="linksMovies">
-      <h3>Top-Rated</h3>
+      <router-link to="/TopRated"><h3>Top-Rated</h3></router-link>
       <h3>Most Popular</h3>
     </div>
-    <h1>Movify</h1>
+    <router-link to="/"><h1>Movify</h1></router-link>
     <div class="watchlist">
-      <h3>Watchlist</h3>
+      <router-link to="/Watchlist"><h3>Watchlist</h3></router-link>
     </div>
   </div>
 </template>

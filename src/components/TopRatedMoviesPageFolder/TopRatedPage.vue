@@ -1,8 +1,10 @@
 <script setup>
+import AppHeader from "../AppHeader.vue";
 </script>
 
 <template>
-  <router-view></router-view>
+  <AppHeader />
+  TopRated
 </template>
 
 <style scoped></style>
