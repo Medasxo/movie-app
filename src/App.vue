@@ -3,7 +3,7 @@ import AppHeader from "./components/AppHeader.vue";
 
 import ShowcaseAutoplay from "./components/ShowcaseAutoplay.vue";
 import { ref } from "vue";
-import LatestMovies from "./components/LatestMovies.vue";
+import UpcomingMovies from "./components/UpcomingMovies.vue";
 
 const API = ref("2cc7d8a7cdb91108d9665ce323fb49a5");
 </script>
@@ -12,11 +12,10 @@ const API = ref("2cc7d8a7cdb91108d9665ce323fb49a5");
   <header>
     <AppHeader />
   </header>
+  <main>
   <ShowcaseAutoplay :apiKey="API" />
-  
-  <LatestMovies />
-
-  <main></main>
+  <UpcomingMovies :apiKey="API"/>
+  </main>
 </template>
 
 <style scoped></style>
