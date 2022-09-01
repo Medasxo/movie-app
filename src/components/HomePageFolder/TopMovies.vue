@@ -47,7 +47,7 @@ onBeforeMount(() => {
           "
         />
         <div class="movieInformation">
-          <h4>{{ topMoviesData[i].original_title }}</h4>
+          <h4>{{ topMoviesData[i].title }}</h4>
           <p>
             {{ topMoviesData[i].release_date }} Rating:{{
               " " + topMoviesData[i].vote_average

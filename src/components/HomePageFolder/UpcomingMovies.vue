@@ -45,7 +45,7 @@ onBeforeMount(() => {
             upcomingMoviesData[i].poster_path
           "
         />
-        <h4>{{ upcomingMoviesData[i].original_title }}</h4>
+        <h4>{{ upcomingMoviesData[i].title }}</h4>
       </div>
     </div>
   </div>
