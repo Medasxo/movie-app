@@ -32,7 +32,6 @@ function getData(url) {
 
 onBeforeMount(() => {
   getData(props.APILink + props.APIKey + "&language=en-US");
-  console.log(Data);
 });
 </script>
 
