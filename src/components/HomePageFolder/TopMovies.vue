@@ -31,7 +31,6 @@ onBeforeMount(() => {
       props.apiKey +
       "&language=en-US&page=1"
   );
-  console.log(topMoviesData);
 });
 </script>
 

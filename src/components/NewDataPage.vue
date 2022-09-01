@@ -27,7 +27,6 @@ function getData(url) {
       (result) => result.poster_path !== null
     );
     Data.value = filtered;
-    console.log(filtered);
   });
 }
 
