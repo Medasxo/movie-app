@@ -2,7 +2,7 @@
 import AppHeader from "./AppHeader.vue";
 import { ref, onBeforeMount } from "vue";
 import goldStar from "./icons/gold-star-icon.png";
-import WatchlistButton from "./watchlistButton.vue";
+import WatchlistButton from "./WatchlistButton.vue";
 
 const Data = ref([]);
 const props = defineProps({
@@ -27,6 +27,7 @@ function getData(url) {
       (result) => result.poster_path !== null
     );
     Data.value = filtered;
+    console.log(filtered);
   });
 }
 
@@ -52,7 +53,14 @@ onBeforeMount(() => {
           />
           <div class="title">
             <div class="number">{{ i }}.</div>
-            <h3>{{ Data[i - 1].title }}</h3>
+            <router-link
+              :to="{
+                path: '/Movie/',
+                name: 'movieInformation',
+                params: { id: Data[i - 1].id },
+              }"
+              ><h3>{{ Data[i - 1].title }}</h3></router-link
+            >
           </div>
         </div>
         <div class="ratingAndWatchlist">

@@ -5,13 +5,14 @@ defineProps({});
 <template>
   <div class="header">
     <div class="linksMovies">
-      <router-link to="/TopRated"><h3 class="hover-underline-animation">Top-Rated</h3></router-link>
-      <router-link to="/MostPopular"><h3 class="hover-underline-animation">Most Popular</h3></router-link>
+      <router-link to="/TopRated"
+        ><h3 class="hover-underline-animation">Top-Rated</h3></router-link
+      >
+      <router-link to="/MostPopular"
+        ><h3 class="hover-underline-animation">Most Popular</h3></router-link
+      >
     </div>
     <router-link to="/"><h1>Movify</h1></router-link>
-    <div class="watchlist">
-      <router-link to="/Watchlist"><h3 class="hover-underline-animation">Watchlist</h3></router-link>
-    </div>
   </div>
 </template>
 
@@ -22,10 +23,6 @@ defineProps({});
   align-items: center;
   justify-content: center;
 }
-.watchlist {
-  position: absolute;
-  right: 2rem;
-}
 h1 {
   border-radius: 1.5rem;
   padding: 1rem;
@@ -33,13 +30,13 @@ h1 {
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
     0 0 0.8rem var(--red), 0 0 2.8rem var(--red), inset 0 0 1.3rem var(--red);
 }
-h1:hover{
+h1:hover {
   background-color: var(--red);
   color: white;
 }
 .linksMovies {
   position: absolute;
-  left: 2rem;
+  right: 2rem;
   display: flex;
   gap: 1rem;
 }
@@ -51,7 +48,7 @@ h1:hover{
 }
 
 .hover-underline-animation:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
