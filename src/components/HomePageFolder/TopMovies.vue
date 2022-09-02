@@ -42,7 +42,7 @@ onBeforeMount(() => {
         <h1>{{ i }}</h1>
         <img
           :src="
-            'http://image.tmdb.org/t/p/w500/' + topMoviesData[i].poster_path
+            'http://image.tmdb.org/t/p/w500/' + topMoviesData[i - 1].poster_path
           "
         />
         <div class="movieInformation">
@@ -50,14 +50,14 @@ onBeforeMount(() => {
             :to="{
               path: '/Movie/',
               name: 'movieInformation',
-              params: { id: topMoviesData[i].id },
+              params: { id: topMoviesData[i - 1].id },
             }"
           >
-            <h4>{{ topMoviesData[i].title }}</h4>
+            <h4 class="title">{{ topMoviesData[i - 1].title }}</h4>
           </router-link>
           <p>
-            {{ topMoviesData[i].release_date }} Rating:{{
-              " " + topMoviesData[i].vote_average
+            {{ topMoviesData[i - 1].release_date }} Rating:{{
+              " " + topMoviesData[i - 1].vote_average
             }}
           </p>
         </div>
@@ -113,5 +113,10 @@ h1 {
 .movieInformation p {
   opacity: 0.5;
   margin: 0;
+}
+
+.title:hover {
+  color: var(--red);
+  text-shadow: 0 0 0.3rem var(--red);
 }
 </style>

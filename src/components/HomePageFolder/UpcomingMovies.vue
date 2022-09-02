@@ -88,4 +88,9 @@ onBeforeMount(() => {
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
     0 0 0.8rem var(--red), 0 0 2.8rem var(--red), inset 0 0 1.3rem var(--red);
 }
+
+.movieTab img:hover {
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--red),
+    0 0 1.3rem var(--red), 0 0 3.5rem #fff, inset 0 0 1.3rem var(--red);
+}
 </style>

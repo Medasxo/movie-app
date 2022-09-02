@@ -41,23 +41,25 @@ onBeforeMount(() => {
               :to="{
                 path: '/Movie/',
                 name: 'movieInformation',
-                params: { id: trendingData.results[i].id },
+                params: { id: trendingData.results[i - 1].id },
               }"
-              >
-            <h1>
-              {{ trendingData.results[i].original_title }}
-            </h1>
+            >
+              <h1 class="title">
+                {{ trendingData.results[i - 1].original_title }}
+              </h1>
             </router-link>
             <div class="info">
-              <p>Release Date: {{ trendingData.results[i].release_date }}</p>
-              <p>Rating: {{ trendingData.results[i].vote_average }}</p>
+              <p>
+                Release Date: {{ trendingData.results[i - 1].release_date }}
+              </p>
+              <p>Rating: {{ trendingData.results[i - 1].vote_average }}</p>
             </div>
-            <p class="overview">{{ trendingData.results[i].overview }}</p>
+            <p class="overview">{{ trendingData.results[i - 1].overview }}</p>
           </div>
           <img
             :src="
               'http://image.tmdb.org/t/p/w500/' +
-              trendingData.results[i].poster_path
+              trendingData.results[i - 1].poster_path
             "
           />
         </div>
@@ -107,5 +109,10 @@ p {
   max-width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.title:hover {
+  color: white;
+  text-shadow: 0 0 0.3rem var(--red);
 }
 </style>
