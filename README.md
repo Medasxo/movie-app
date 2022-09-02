@@ -1,35 +1,12 @@
-# .
+# Movie-App made with VueJS
+Movie App made with VueJS and TheMovieDB API.
+## Final Images:
 
-This template should help get you started developing with Vue 3 in Vite.
+<img src="Final_img1.png" />
+<img src="Final_img2.png" />
+<img src="Final_img3.png" />
+<img src="Final_img4.png" />
+<img src="Final_img5.png" />
+<img src="Final_img6.png" />
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
