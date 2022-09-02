@@ -1,8 +1,7 @@
 <script setup>
 import AppHeader from "./AppHeader.vue";
 import { ref, onBeforeMount } from "vue";
-import goldStar from "./icons/gold-star-icon.png";
-import WatchlistButton from "./WatchlistButton.vue";
+import RowCard from "./RowCard.vue";
 
 const Data = ref([]);
 const props = defineProps({
@@ -45,36 +44,24 @@ onBeforeMount(() => {
         <p>Rank & Title</p>
         <p>Rating</p>
       </div>
-      <div class="movieTab" v-for="i in 20" :key="i">
-        <div class="titleAndImage">
-          <img
-            :src="'http://image.tmdb.org/t/p/w500/' + Data[i - 1].poster_path"
-          />
-          <div class="title">
-            <div class="number">{{ i }}.</div>
-            <router-link
-              :to="{
-                path: '/Movie/',
-                name: 'movieInformation',
-                params: { id: Data[i - 1].id },
-              }"
-              ><h3>{{ Data[i - 1].title }}</h3></router-link
-            >
-          </div>
-        </div>
-        <div class="ratingAndWatchlist">
-          <div class="rating">
-            <img :src="goldStar" />
-            <h3>{{ Data[i - 1].vote_average }}</h3>
-          </div>
-          <WatchlistButton />
-        </div>
+      <div class="movieTab" v-for="i in Data.length" :key="i">
+        <RowCard
+          :number="i"
+          :img="Data[i - 1].poster_path"
+          :id="Data[i - 1].id"
+          :title="Data[i - 1].title"
+          :vote_average="Data[i - 1].vote_average"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+  .star{
+    height: 10px;
+    width: 20px;
+}
 .topRatedMoviesContainer {
   color: white;
   background-color: var(--red);
