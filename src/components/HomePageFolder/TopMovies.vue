@@ -46,7 +46,15 @@ onBeforeMount(() => {
           "
         />
         <div class="movieInformation">
-          <h4>{{ topMoviesData[i].title }}</h4>
+          <router-link
+            :to="{
+              path: '/Movie/',
+              name: 'movieInformation',
+              params: { id: topMoviesData[i].id },
+            }"
+          >
+            <h4>{{ topMoviesData[i].title }}</h4>
+          </router-link>
           <p>
             {{ topMoviesData[i].release_date }} Rating:{{
               " " + topMoviesData[i].vote_average
@@ -62,6 +70,7 @@ onBeforeMount(() => {
 .topMoviesTab {
   display: flex;
   flex-direction: column;
+  width: 25rem;
 }
 h1 {
   color: var(--red);
@@ -71,8 +80,10 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
 .topMovie {
+  width: 100%;
   display: flex;
   padding-left: 0.5rem;
   gap: 1rem;

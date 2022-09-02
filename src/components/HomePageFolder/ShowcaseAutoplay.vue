@@ -37,9 +37,17 @@ onBeforeMount(() => {
       <template #content>
         <div class="content">
           <div class="description">
+            <router-link
+              :to="{
+                path: '/Movie/',
+                name: 'movieInformation',
+                params: { id: trendingData.results[i].id },
+              }"
+              >
             <h1>
               {{ trendingData.results[i].original_title }}
             </h1>
+            </router-link>
             <div class="info">
               <p>Release Date: {{ trendingData.results[i].release_date }}</p>
               <p>Rating: {{ trendingData.results[i].vote_average }}</p>

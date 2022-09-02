@@ -39,12 +39,20 @@ onBeforeMount(() => {
     <h1>Upcoming Movies</h1>
     <div class="moviesGrid" v-if="upcomingMoviesData.length > 0">
       <div class="movieTab" v-for="i in 15" :key="i">
-        <img
-          :src="
-            'http://image.tmdb.org/t/p/w500/' +
-            upcomingMoviesData[i].poster_path
-          "
-        />
+        <router-link
+          :to="{
+            path: '/Movie/',
+            name: 'movieInformation',
+            params: { id: upcomingMoviesData[i].id },
+          }"
+        >
+          <img
+            :src="
+              'http://image.tmdb.org/t/p/w500/' +
+              upcomingMoviesData[i].poster_path
+            "
+          />
+        </router-link>
         <h4>{{ upcomingMoviesData[i].title }}</h4>
       </div>
     </div>
